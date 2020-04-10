@@ -17,6 +17,7 @@ public class Assert {
         }
     }
 
+
     public static boolean assertNull(Integer actualValue) {
         boolean isNull = actualValue == null;
         if (isNull) {
@@ -25,6 +26,24 @@ public class Assert {
             System.out.println("Test failed, the value is not null:" + actualValue);
         }
         return isNull;
+    }
+
+
+    public static void assertTrue(Boolean actualValue) {
+        if (actualValue == null || !actualValue) {
+            System.out.println("Test failed, the value is not null:" + actualValue);
+        } else {
+            System.out.println("Test succeeded.");
+        }
+    }
+
+
+    public static void assertFalse(Boolean actualValue) {
+        if (actualValue == null || actualValue) {
+            System.out.println("Test failed, the value is not null:" + actualValue);
+        } else {
+            System.out.println("Test succeeded.");
+        }
     }
 }
 
