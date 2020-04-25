@@ -39,7 +39,7 @@ public class EmailReporter extends ScheduledReporter{
 
 
     @VisibleForTesting
-    protected Date getFirstTime(Date date) {
+    protected static Date getFirstTime(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.add(Calendar.DATE, 1);
@@ -48,5 +48,11 @@ public class EmailReporter extends ScheduledReporter{
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
         return calendar.getTime();
+    }
+
+    public static void main(String[] args) {
+        Date date = EmailReporter.getFirstTime(new Date());
+        System.out.println(date.getTime());
+
     }
 }
