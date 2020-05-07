@@ -15,24 +15,24 @@ public class BloomFilterDemo {
     public static void main(String[] args) throws Exception{
         // 总数量
         int total = 20_000_000;
-        BloomFilter<CharSequence> bf = BloomFilter.create(Funnels.stringFunnel(Charsets.UTF_8), total);
+        BloomFilter<Long> bf = BloomFilter.create(Funnels.longFunnel(), total, 0.01);
 
 
         long startInit = System.currentTimeMillis();
         System.out.println("开始初始化...");
-        for (int i = 0; i < total; i++) {
-            bf.put("" + i);
+        for (long i = 0; i < total; i = i + 2) {
+            bf.put(i);
         }
         long initTimeInMillis = System.currentTimeMillis() - startInit;
         System.out.println("结束初始化，用时：" + initTimeInMillis);
 
         System.out.println("approximateElementCount:" + bf.approximateElementCount());
 
-        for (int i = 0; i < total; i++) {
-            bf.put("" + i);
-        }
-
-        System.out.println("approximateElementCount:" + bf.approximateElementCount());
+//        for (int i = 0; i < total; i++) {
+//            bf.put("" + i);
+//        }
+//
+//        System.out.println("approximateElementCount:" + bf.approximateElementCount());
 
 
 
@@ -42,13 +42,13 @@ public class BloomFilterDemo {
         // 判断值是否存在过滤器中
         int count = 0;
         System.out.println("开始判断");
-        for (int i = 0; i < total + 10000; i++) {
-            if (bf.mightContain("" + i)) {
+        for (long i = 1; i < total; i=i +2) {
+            if (bf.mightContain(i)) {
                 count++;
             }
         }
 
-        serializeToFile(bf);
+//        serializeToFile(bf);
 
         System.out.println("已匹配数量：" + count + " 用时：" + (System.currentTimeMillis() - startJudge));
 
