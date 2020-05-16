@@ -1,4 +1,4 @@
-package site.pengcheng.concurrentUtil;
+package site.pengcheng.concurrent.concurrentUtil;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

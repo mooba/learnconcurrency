@@ -1,4 +1,4 @@
-package learnquartz;
+package site.pengcheng.learnquartz;
 
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;

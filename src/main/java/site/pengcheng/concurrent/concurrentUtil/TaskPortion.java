@@ -1,4 +1,4 @@
-package site.pengcheng.concurrentUtil;
+package site.pengcheng.concurrent.concurrentUtil;
 
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;

@@ -1,13 +1,10 @@
-package site.pengcheng.ch6;
+package site.pengcheng.functional.ch6;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**

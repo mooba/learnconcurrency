@@ -8,7 +8,7 @@ import java.util.Collections;
  * @description
  * @date 2020/4/10 10:18 下午
  */
-public class PerfCounterTest {
+public class MetricsMain {
     public static void main(String[] args) {
         ConsoleReporter consoleReporter = new ConsoleReporter();
         consoleReporter.startRepeatedReport(60, 60);

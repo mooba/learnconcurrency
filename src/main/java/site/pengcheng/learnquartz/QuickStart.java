@@ -1,4 +1,4 @@
-package learnquartz;
+package site.pengcheng.learnquartz;
 
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
