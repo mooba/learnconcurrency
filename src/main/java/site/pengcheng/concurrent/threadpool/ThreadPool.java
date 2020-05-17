@@ -17,7 +17,7 @@ public interface ThreadPool<Job extends Runnable> {
      * 添加工作线程
      * @param nums
      */
-    void addWorkers(int nums);
+    void addWorkers(int num);
 
     /**
      * 关闭线程池
