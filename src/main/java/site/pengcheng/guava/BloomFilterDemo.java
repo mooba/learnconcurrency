@@ -3,8 +3,12 @@ package site.pengcheng.guava;
 import com.google.common.base.Charsets;
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
+import org.apache.lucene.util.RamUsageEstimator;
+import org.openjdk.jol.info.ClassLayout;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author pengchengbai
@@ -12,32 +16,56 @@ import java.io.*;
  * @date 2020/3/14 2:50 下午
  */
 public class BloomFilterDemo {
+    // 总数量
+    private static final int total = 20_000_000;
+
     public static void main(String[] args) throws Exception{
-        // 总数量
-        int total = 20_000_000;
+//        BloomFilterDemo demo = new BloomFilterDemo();
+
+//        List<Long> list = new ArrayList<>(100);
+//        BloomFilter<Long> bf = BloomFilter.create(Funnels.longFunnel(), total, 0.01);
+//        long startInit = System.currentTimeMillis();
+//        System.out.println("开始初始化...");
+//        for (long i = 0; i < total; i = i + 2) {
+//            bf.put(i);
+//            list.add(i);
+//        }
+//        long initTimeInMillis = System.currentTimeMillis() - startInit;
+//        System.out.println("结束初始化，用时：" + initTimeInMillis + " approximateElementCount:" + bf.approximateElementCount());
+
+
+        Long a = new Long(129);
+        Integer b = new Integer(129);
+//        System.out.println("size1:" + RamUsageEstimator.sizeOfObject(a));
+//        System.out.println("size2:" + RamUsageEstimator.sizeOfObject(b));
+//        System.out.println("size3:" + RamUsageEstimator.sizeOfObject(bf));
+//        System.out.println(RamUsageEstimator.sizeOfObject(bf, 0));
+
+
+        Object object = new Object();
+        System.err.println(ClassLayout.parseInstance(object).toPrintable());
+
+
+    }
+
+
+
+    private BloomFilter<Long> createBf() {
+
         BloomFilter<Long> bf = BloomFilter.create(Funnels.longFunnel(), total, 0.01);
-
-
         long startInit = System.currentTimeMillis();
         System.out.println("开始初始化...");
         for (long i = 0; i < total; i = i + 2) {
             bf.put(i);
         }
         long initTimeInMillis = System.currentTimeMillis() - startInit;
-        System.out.println("结束初始化，用时：" + initTimeInMillis);
+        System.out.println("结束初始化，用时：" + initTimeInMillis + "approximateElementCount:" + bf.approximateElementCount());
 
-        System.out.println("approximateElementCount:" + bf.approximateElementCount());
-
-//        for (int i = 0; i < total; i++) {
-//            bf.put("" + i);
-//        }
-//
-//        System.out.println("approximateElementCount:" + bf.approximateElementCount());
+        return bf;
+    }
 
 
-
-//        BloomFilter<CharSequence> bf = deserializeFromFile();
-
+    private void judgeExist(BloomFilter<Long> bf) {
         long startJudge = System.currentTimeMillis();
         // 判断值是否存在过滤器中
         int count = 0;
@@ -48,10 +76,7 @@ public class BloomFilterDemo {
             }
         }
 
-//        serializeToFile(bf);
-
         System.out.println("已匹配数量：" + count + " 用时：" + (System.currentTimeMillis() - startJudge));
-
     }
 
 
