@@ -1,6 +1,5 @@
 package site.pengcheng.jvm.reference;
 
-import site.pengcheng.jvm.reference.M;
 
 import java.lang.ref.WeakReference;
 
@@ -14,7 +13,6 @@ import java.lang.ref.WeakReference;
 public class WeakReferenceTest {
     public static void main(String[] args) {
         WeakReference<M> m = new WeakReference<>(new M());
-
         System.out.println(m.get());
         System.gc();
         System.out.println(m.get());

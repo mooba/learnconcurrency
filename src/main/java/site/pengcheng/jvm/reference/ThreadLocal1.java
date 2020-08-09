@@ -1,5 +1,7 @@
 package site.pengcheng.jvm.reference;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author pengchengbai
  * @description
@@ -9,5 +11,33 @@ package site.pengcheng.jvm.reference;
  * @date 2020/5/25 9:02 下午
  */
 public class ThreadLocal1 {
+    
+    static ThreadLocal<Person> tl = new ThreadLocal<>();
+    
+    public static void main(String[] args) {
+        new Thread(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(tl.get());
+        }).start();
 
+
+        new Thread(() ->  {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException interruptedException) {
+                interruptedException.printStackTrace();
+            }
+            tl.set(new Person());
+        }).start();
+    }
+
+}
+
+
+class Person {
+    String name = "zhangsan";
 }

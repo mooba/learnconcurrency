@@ -1,12 +1,10 @@
 package site.pengcheng.concurrent.threadpool;
 
-import jdk.nashorn.internal.runtime.WithObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
