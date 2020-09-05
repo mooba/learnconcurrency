@@ -1,0 +1,11 @@
+
+q
+java:S1215"TDon't try to be smarter than the JVM, remove this call to run the garbage collector.(Ì°¬“8¹ô³ò¼.
+H
+java:S1481"&Remove this unused "m" local variable.(…Ş”³üÿÿÿÿ8¹ô³ò¼.
+W
+java:S1854"5Remove this useless assignment to local variable "m".(ıô½Óüÿÿÿÿ8¹ô³ò¼.
+W
+java:S1128":Remove this unused import 'java.util.concurrent.TimeUnit'.(Æ™ş8ÿ×Òò¼.
+W
+java:S1854"5Remove this useless assignment to local variable "m".(…Ş”³üÿÿÿÿ8¹ô³ò¼.

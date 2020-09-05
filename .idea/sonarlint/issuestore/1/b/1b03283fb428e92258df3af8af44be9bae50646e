@@ -1,0 +1,14 @@
+
+G
+java:S1144H",Remove this unused private "testNio" method.(ËÅ­˜ıÿÿÿÿ
+S	java:S1067"9Replace this use of System.out or System.err by a logger.(û€ğ‚úÿÿÿÿ
+U	java:S106."9Replace this use of System.out or System.err by a logger.(¦‰±¥8ªíÛ”½.
+=
+java:S1481I"'Remove this unused "b1" local variable.(§ğë
+N	java:S106#"9Replace this use of System.out or System.err by a logger.(¦‰±¥
+L
+java:S1854I"6Remove this useless assignment to local variable "b1".(§ğë
+S
+java:S1854L"6Remove this useless assignment to local variable "b2".(ßÖ«¸8¥¶•½.
+D
+java:S1481L"'Remove this unused "b2" local variable.(ßÖ«¸8¥¶•½.

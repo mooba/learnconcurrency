@@ -1,0 +1,9 @@
+
+d
+java:S2095"QUse try-with-resources or close this "SubmissionPublisher" in a "finally" clause.(˜ÕŠ
+P
+java:S1854"=Remove this useless assignment to local variable "publisher".(˜ÕŠ
+…
+java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÙØ¤Þýÿÿÿÿ
+A
+java:S1481".Remove this unused "publisher" local variable.(˜ÕŠ
